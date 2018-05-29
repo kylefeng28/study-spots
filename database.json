@@ -1,0 +1,19 @@
+{
+  "studyspots": [
+    {
+      "name": "Davis Library",
+      "description": "Relatively quiet.",
+      "id": "7de2a17a-c5e4-42d7-b493-6f24b2d5d5d5"
+    },
+    {
+      "name": "UL",
+      "description": "Might be a bit full on some days.",
+      "id": "d6af0eb3-4a63-4ed0-8f69-0aca5f38b9df"
+    },
+    {
+      "name": "Union 2000",
+      "description": "Where all the JCC people live.",
+      "id": "f977f916-3008-4b65-abdc-39edd53fd1e3"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "study-spots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "html-webpack-plugin": "^3.2.0",
+    "lodash-id": "^0.14.0",
+    "lowdb": "^1.0.0",
+    "react": "^16.3.2",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "webpack": "^4.8.3"
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<title>Study Spots</title>
+
+		<!--Bootstrap-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+		<!--jQuery-->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+
+	<!--Vue app-->
+	<div id="app" class="container">
+		<h1>Study Spots</h1>
+
+		<!-- Iterate through all the study spots -->
+		<h2>Current study spots:</h2>
+
+		<div v-if="studySpots.length == 0" class="alert alert-primary" role="alert">
+			Oops, there doesn't seem to be anything added yet! You can be the first!
+		</div>
+		<ul v-else>
+			<li v-for="studySpot in studySpots" v-bind:key="studySpot.id">
+				<ul>
+					<li><b>Name: {{studySpot.name}}</b></li>
+					<li><span>Description: {{studySpot.description}}</span></li>
+					<li><button class="btn btn-danger" v-on:click="deleteStudySpot(studySpot.id)">Delete</button></li>
+				</ul>
+			</li>
+		</ul>
+
+		<!-- New study spot form -->
+		<h2>Add a new study spot:</h2>
+		<form>
+			<label for="input_name">Name</label>
+			<input id="input_name" class="form-control" type="text" v-model="newStudySpot.name">
+			<br>
+
+			<label for="input_description">Description</label>
+			<textarea id="input_description" class="form-control" v-model="newStudySpot.description"></textarea>
+			<br>
+
+			<button type="button" class="btn btn-primary" v-on:click="addNewStudySpot">Submit</button>
+			<button type="button" class="btn btn-secondary" v-on:click="clearNewStudySpot">Clear</button>
+		</form>
+
+	</div>
+
+	<script type="text/javascript" src="./bundle.js?fee7daf82ff953e65475"></script></body>
+</html>
