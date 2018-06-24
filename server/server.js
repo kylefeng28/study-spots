@@ -29,8 +29,12 @@ app.get('/api/studyspot', function(req, res) {
 app.get('/api/studyspot/:id', function(req, res) {
 	const id = req.params['id'];
 	const collection = db.get('studyspots');
-	const result = collection.getById(id);
-	res.json(result);
+	if (!collection.getById(id).value()) {
+		res.status(404).send('No such study spot.');
+	} else {
+		const result = collection.getById(id);
+		res.json(result);
+	}
 });
 
 // Create new study spot
@@ -46,10 +50,13 @@ app.post('/api/studyspot', function(req, res) {
 app.put('/api/studyspot/:id', function(req, res) {
 	const id = req.params['id'];
 	const studyspot = req.body;
-	// TODO validate
 	const collection = db.get('studyspots');
-	const result = collection.updateById(id, studyspot).write();
-	res.json(result);
+	if (!collection.getById(id).value()) {
+		res.status(404).send('No such study spot.');
+	} else {
+		const result = collection.updateById(id, studyspot).write();
+		res.json(result);
+	}
 });
 
 // Delete study spot by ID
