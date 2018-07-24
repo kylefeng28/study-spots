@@ -47,6 +47,14 @@
 			<textarea id="input_description" class="form-control" v-model="newStudySpot.description"></textarea>
 			<br>
 
+			<label for="input_lat">Latitude</label>
+			<input id="input_lat" clas="form-control" type="text" v-model="newStudySpot.lat">
+			<br>
+
+			<label for="input_long">Longitude</label>
+			<input id="input_long" clas="form-control" type="text" v-model="newStudySpot.long">
+			<br>
+
 			<button type="button" class="btn btn-primary" v-on:click="addNewStudySpot">Submit</button>
 			<button type="button" class="btn btn-secondary" v-on:click="clearNewStudySpot">Clear</button>
 		</form>
